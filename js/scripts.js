@@ -1,13 +1,13 @@
 $(document).ready(function()  {
-  $("#blanks form").submit(function(event) {
-
+  $("form").submit(function(event) {
+    event.preventDefault();
     var blanks = ['person1','person2','animal','exclamation','verb','noun'];
-
-    blanks.forEach(function(blank){
-      var userInput = $('#blanks #' + blank).val();
-      alert('#blanks #' + blank);
-      $('#story' + ' .' + blank).text(userInput);
-    });
+    //
+     for(var i=0; i < blanks.length; i++){
+      var userInput = $('#blanks #' + blanks[i]).val();
+      // alert('#blanks #' + blanks[i]);
+      $('#story' + ' .' + blanks[i]).text(userInput);
+      }
     // var inputperson1 = $("input#person1").val();
     // var inputperson2 = $("input#person2").val();
     // var inputanimal = $("input#animal").val();
@@ -24,6 +24,6 @@ $(document).ready(function()  {
 
     $("#story").show();
 
-    event.preventDefault();
+
   });
 });
